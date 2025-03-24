@@ -1,0 +1,10 @@
+CREATE TABLE Operations (
+    Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    ContainerId UNIQUEIDENTIFIER NOT NULL,
+    StartDate DATETIME NOT NULL,
+    EndDate DATETIME NOT NULL,
+    OperationType NVARCHAR(50) NOT NULL,
+    OperatorName NVARCHAR(100) NOT NULL,
+    InspectionLocation NVARCHAR(100) NOT NULL,
+    FOREIGN KEY (ContainerId) REFERENCES Containers(Id)
+);
